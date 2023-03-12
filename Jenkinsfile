@@ -1,10 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker "alpine"
+    }
 
     stages {
         stage('Build') {
             steps {
                 echo 'Stage Build'
+                sh "hostname"
             }
         }
         stage('Test') {
